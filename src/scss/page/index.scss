@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Family;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url('../../../images/bg-pattern-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  padding-left: 10%;
+}
+
+.section-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.header {
+  & .logo {
+    width: 130px;
+  }
+}
+
+.section-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & .title {
+    font-weight: 300;
+    color: $DesaturatedRed;
+    text-transform: uppercase;
+    letter-spacing: .7rem;
+  }
+
+  & .title span {
+    font-weight: 600;
+    color: $DarkGrayishRed;
+  }
+
+  & :where(.title, .title span) {
+    font-size: 3.7rem;
+  }
+
+  & .description {
+    width: 350px;
+    font-size: .9rem;
+    font-weight: 400;
+    color: $DesaturatedRed;
+    line-height: 1.3rem;
+  }
+
+  & form {
+    width: 100%;
+  }
+
+  & input {
+    position: relative;
+    width: 350px;
+    height: 45px;
+    border-radius: 100px;
+    border:1px solid $DesaturatedRed;
+    background: transparent;
+    padding-left: 1.5rem;
+  }
+
+  & input:focus-visible {
+    outline-color: $DesaturatedRed;
+  }
+
+  & ::placeholder {
+    font-size: .8rem;
+    color: $DesaturatedRed;
+  }
+
+  & button {
+    position: absolute;
+    height: 45px;
+    width: 75px;
+    border: none;
+    border-radius: 100px;
+    background-image: linear-gradient(135deg , hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    transform: translateX(-100%);
+    cursor: pointer;
+  }
+
+  & button:hover {
+    background-image: linear-gradient(135deg , hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+    box-shadow: 0px 10px 15px hsl(0, 58%, 87%);
+  }
+}
+
+:where(.section-image-desktop , .section-image-mobile) {
+  position: relative;
+
+  & .image-woman {
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+    object-position: top center;
+    object-fit: cover;
+    left: -3000000px;
+  }
+
+  & .switchImage {
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+.section-image-desktop {
+  grid-area: 1 / 2 / 2 / 4;
+
+  & .switchImage {
+    height: 100%;
+  }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

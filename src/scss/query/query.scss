@@ -1,0 +1,134 @@
+@media (max-width: 1150px) {
+
+  .header {
+
+    & .logo {
+      width: 115px;
+    }
+  }
+
+  .section-form {
+
+    & :where(.title, .title span) {
+      font-size: 3.4rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .main {
+    grid-template-columns: 1fr .9fr;
+    padding-left: 5%;
+  }
+
+  .section-form {
+
+    & :where(.title, .title span) {
+      font-size: 3rem;
+    }
+
+    & .description {
+      font-size: .8rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    height: auto;
+  }
+
+  .main {
+    height: auto;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+  
+  .header {
+    align-self: flex-start;
+
+    & .logo {
+      width: 120px;
+    }
+  }
+
+  .section-content {
+    width: 80%;
+    height: auto;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+    padding-block: 3.5rem;
+    gap: 2.8rem;
+
+    & :where(.title, .title span) {
+      font-size: 3.3rem;
+    }
+  }
+
+  .section-image-mobile {
+    width: 100%;
+    height: auto;
+
+    & .image-woman {
+      position: inherit;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+
+  .section-content {
+    width: 100%;
+
+    & :where(.title, .title span) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .header {
+    margin-left: 10%;
+
+    & .logo {
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+
+  .header {
+
+    & .logo {
+      width: 90px;
+    }
+  }
+
+  .section-content {
+    gap: 2rem;
+
+    & :where(.title, .title span) {
+      font-size: 2.3rem;
+    }
+  }
+  
+  .section-form {
+
+    & .description {
+      margin-inline: auto;
+      width: 80%;
+    }
+
+    & input {
+      width: 80%;
+      height: 42px;
+    }
+
+    & button {
+      height: 42px;
+    }
+  }
+}
