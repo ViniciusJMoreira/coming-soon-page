@@ -220,10 +220,9 @@ body {
   }
   .section-form input {
     width: 80%;
-    height: 42px;
   }
   .section-form button {
-    height: 42px;
+    width: 65px;
   }
 }
 
