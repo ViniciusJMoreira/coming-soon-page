@@ -45,14 +45,6 @@
     grid-template-columns: 1fr;
     padding-left: 0;
   }
-  
-  .header {
-    align-self: flex-start;
-
-    & .logo {
-      width: 120px;
-    }
-  }
 
   .section-content {
     width: 80%;
@@ -62,9 +54,13 @@
     text-align: center;
     padding-block: 3.5rem;
     gap: 2.8rem;
+  }
+  
+  .header {
+    align-self: flex-start;
 
-    & :where(.title, .title span) {
-      font-size: 3.3rem;
+    & .logo {
+      width: 120px;
     }
   }
 
@@ -77,16 +73,23 @@
       height: auto;
     }
   }
+
+  .section-form {
+
+    & :where(.title, .title span) {
+      font-size: 3.3rem;
+    }
+
+    & :where(.title, .title span, .description) {
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 568px) {
 
   .section-content {
     width: 100%;
-
-    & :where(.title, .title span) {
-      font-size: 2.8rem;
-    }
   }
 
   .header {
@@ -96,9 +99,20 @@
       width: 100px;
     }
   }
+
+  .section-form {
+
+    & :where(.title, .title span) {
+      font-size: 2.8rem;
+    }
+  }
 }
 
 @media (max-width: 375px) {
+
+  .section-content {
+    gap: 2rem;
+  }
 
   .header {
 
@@ -106,16 +120,12 @@
       width: 90px;
     }
   }
-
-  .section-content {
-    gap: 2rem;
-
+  
+  .section-form {
+    
     & :where(.title, .title span) {
       font-size: 2.3rem;
     }
-  }
-  
-  .section-form {
 
     & .description {
       margin-inline: auto;
@@ -128,6 +138,11 @@
 
     & button {
       width: 65px;
+    }
+
+    & .error {
+      margin-inline: auto;
+      width: 80%;
     }
   }
 }

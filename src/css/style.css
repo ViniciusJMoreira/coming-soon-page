@@ -66,27 +66,30 @@ body {
   line-height: 1.3rem;
 }
 .section-form form {
+  margin-inline: auto;
   width: 100%;
 }
 .section-form input {
   position: relative;
   width: 350px;
-  height: 45px;
+  height: 50px;
   border-radius: 100px;
   border: 1px solid hsl(0, 36%, 70%);
   background: transparent;
   padding-left: 1.5rem;
 }
 .section-form input:focus-visible {
-  outline-color: hsl(0, 36%, 70%);
+  outline-color: hsl(0, 93%, 68%);
 }
 .section-form ::placeholder {
   font-size: 0.8rem;
   color: hsl(0, 36%, 70%);
 }
-.section-form button {
+.section-form :where(.button, .icon-error) {
   position: absolute;
-  height: 45px;
+}
+.section-form .button {
+  height: 50px;
   width: 75px;
   border: none;
   border-radius: 100px;
@@ -94,9 +97,21 @@ body {
   transform: translateX(-100%);
   cursor: pointer;
 }
-.section-form button:hover {
+.section-form .button:hover {
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
   box-shadow: 0px 10px 15px hsl(0, 58%, 87%);
+}
+.section-form .icon-error {
+  display: none;
+  transform: translateX(-500%) translateY(50%);
+}
+.section-form .error {
+  display: none;
+  font-size: 0.8rem;
+  color: hsl(0, 93%, 68%);
+  padding-left: 1.5rem;
+  margin-block: 0.8rem;
+  text-align: start;
 }
 
 :where(.section-image-desktop, .section-image-mobile) {
@@ -163,12 +178,6 @@ body {
     grid-template-columns: 1fr;
     padding-left: 0;
   }
-  .header {
-    align-self: flex-start;
-  }
-  .header .logo {
-    width: 120px;
-  }
   .section-content {
     width: 80%;
     height: auto;
@@ -178,8 +187,11 @@ body {
     padding-block: 3.5rem;
     gap: 2.8rem;
   }
-  .section-content :where(.title, .title span) {
-    font-size: 3.3rem;
+  .header {
+    align-self: flex-start;
+  }
+  .header .logo {
+    width: 120px;
   }
   .section-image-mobile {
     width: 100%;
@@ -189,13 +201,16 @@ body {
     position: inherit;
     height: auto;
   }
+  .section-form :where(.title, .title span) {
+    font-size: 3.3rem;
+  }
+  .section-form :where(.title, .title span, .description) {
+    text-align: center;
+  }
 }
 @media (max-width: 568px) {
   .section-content {
     width: 100%;
-  }
-  .section-content :where(.title, .title span) {
-    font-size: 2.8rem;
   }
   .header {
     margin-left: 10%;
@@ -203,15 +218,18 @@ body {
   .header .logo {
     width: 100px;
   }
+  .section-form :where(.title, .title span) {
+    font-size: 2.8rem;
+  }
 }
 @media (max-width: 375px) {
-  .header .logo {
-    width: 90px;
-  }
   .section-content {
     gap: 2rem;
   }
-  .section-content :where(.title, .title span) {
+  .header .logo {
+    width: 90px;
+  }
+  .section-form :where(.title, .title span) {
     font-size: 2.3rem;
   }
   .section-form .description {
@@ -223,6 +241,10 @@ body {
   }
   .section-form button {
     width: 65px;
+  }
+  .section-form .error {
+    margin-inline: auto;
+    width: 80%;
   }
 }
 
