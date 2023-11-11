@@ -22,9 +22,8 @@ body {
   grid-template-columns: 1fr .7fr;
   padding-left: 10%;
   background: url('../../../images/bg-pattern-desktop.svg');
-  background-repeat: no-repeat;
+  background-size: contain;
   background-position: top left;
-  background-color: hsl(0, 100%, 98%);
 }
 
 .section-content {
