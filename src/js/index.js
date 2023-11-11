@@ -19,7 +19,8 @@ const validationEmail = (e) => {
 
   try {
   if(inputEmail.match(/\w{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/)){
-    console.log('success')
+    errorMessage.style.display = 'none';
+    iconError.style.display = 'none';
   }else {
     throw new Error()
   }
