@@ -48,6 +48,7 @@
   }
 
   .section-content {
+    max-width: 800px;
     width: 80%;
     height: auto;
     margin-inline: auto;
@@ -79,11 +80,15 @@
     gap: 1.9rem;
 
     & :where(.title, .title span) {
-      font-size: 4rem;
+      font-size: 3.9rem;
     }
 
     & :where(.title, .title span, .description) {
       text-align: center;
+    }
+
+    & .description {
+      font-size: .9rem;
     }
   }
 }

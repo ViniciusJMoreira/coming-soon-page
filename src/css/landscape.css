@@ -179,6 +179,7 @@ body {
     padding-left: 0;
   }
   .section-content {
+    max-width: 800px;
     width: 80%;
     height: auto;
     margin-inline: auto;
@@ -205,10 +206,13 @@ body {
     gap: 1.9rem;
   }
   .section-form :where(.title, .title span) {
-    font-size: 4rem;
+    font-size: 3.9rem;
   }
   .section-form :where(.title, .title span, .description) {
     text-align: center;
+  }
+  .section-form .description {
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 768px) {
