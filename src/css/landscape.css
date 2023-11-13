@@ -23,7 +23,7 @@ body {
   grid-template-columns: 1fr 0.7fr;
   padding-left: 10%;
   background: url("../../../images/bg-pattern-desktop.svg");
-  background-size: contain;
+  background-size: cover;
   background-position: top left;
 }
 
@@ -168,12 +168,13 @@ body {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 768px) {
+@media (orientation: portrait) {
   body {
     height: auto;
+    min-height: 100vh;
   }
   .main {
-    height: auto;
+    min-height: inherit;
     grid-template-columns: 1fr;
     padding-left: 0;
   }
@@ -199,6 +200,53 @@ body {
   .section-image-mobile .image-woman {
     position: inherit;
     height: auto;
+  }
+  .section-form {
+    gap: 1.9rem;
+  }
+  .section-form :where(.title, .title span) {
+    font-size: 4rem;
+  }
+  .section-form :where(.title, .title span, .description) {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+  }
+  .main {
+    min-height: inherit;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    border: 1px solid;
+  }
+  .section-content {
+    width: 80%;
+    height: auto;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+    padding-block: 3.5rem;
+    gap: 2.8rem;
+  }
+  .header {
+    align-self: flex-start;
+  }
+  .header .logo {
+    width: 120px;
+  }
+  .section-image-mobile {
+    width: 100%;
+    height: auto;
+  }
+  .section-image-mobile .image-woman {
+    position: inherit;
+    height: auto;
+  }
+  .section-form {
+    gap: 1.5rem;
   }
   .section-form :where(.title, .title span) {
     font-size: 3.3rem;
@@ -232,6 +280,7 @@ body {
     font-size: 2.3rem;
   }
   .section-form .description {
+    font-size: 0.7rem;
     margin-inline: auto;
     width: 80%;
   }
@@ -247,4 +296,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=landscape.css.map */

@@ -2,12 +2,14 @@ const imageWoman = document.querySelectorAll('.image-woman');
 const form = document.querySelector('form');
 
 const switchImage = () => {
-  if(window.innerWidth > 768) {
-    imageWoman[0].classList.remove('switchImage');
-    imageWoman[1].classList.add('switchImage');
-  } else {
+  if (window.matchMedia("(orientation: portrait)").matches || innerWidth < 768) {
+    // Apply CSS when the device is in portrait mode
     imageWoman[1].classList.remove('switchImage');
     imageWoman[0].classList.add('switchImage');
+  } else if (window.matchMedia("(orientation: landscape)").matches || innerWidth > 768) {
+    // Apply CSS when the device is in landscape mode
+    imageWoman[0].classList.remove('switchImage');
+    imageWoman[1].classList.add('switchImage');
   }
 };
 
